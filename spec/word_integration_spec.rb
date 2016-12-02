@@ -19,3 +19,11 @@ describe('the path to the success page after completing the add word form', {:ty
     expect(page).to have_content('Word has been added to dictionary')
   end
 end
+
+# describe('the path to the word list/home from succes page', {:type => :feature}) do
+#   it('processes the users click and takes them to the word list/home page') do
+#     visit('/words')
+#     click_link('List')
+#     expect(page).to have_content('Personal')
+#   end
+# end
