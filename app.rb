@@ -18,3 +18,12 @@ post('/words') do
   @words_array = Word.all()
   erb(:success)
 end
+
+get('/words/:id') do
+  @word = Word.find(params.fetch('id').to_i())
+  erb(:word)
+end
+
+get('/words/:id/definitions/new') do
+  erb(:definition_form)
+end
