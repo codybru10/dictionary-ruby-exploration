@@ -1,6 +1,7 @@
 require('capybara/rspec')
 require('./app')
 Capybara.app = Sinatra::Application
+Launchy.app = Rack::Test
 set(:show_expections, false)
 
 describe('the path to add word form', {:type => :feature}) do

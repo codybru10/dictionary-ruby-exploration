@@ -5,7 +5,7 @@ require('./lib/word')
 require('./lib/definition')
 
 get('/') do
-  @words_array = Word.all
+  @words_array = Word.all()
   erb(:index)
 end
 
@@ -22,8 +22,6 @@ end
 
 get('/words/:id') do
   @word = Word.find(params.fetch('id').to_i())
-  @definition = Definition.find(params.fetch('id').to_i())
-  @definition_array = Definition.all()
   erb(:word)
 end
 
@@ -37,6 +35,6 @@ post('/definitions') do
   @definition = Definition.new(@description)
   @definition.save()
   @word = Word.find(params.fetch('word_id').to_i())
-  @word.add_definition(@defintion)
+  @word.add_definition(@definition)
   erb(:success2)
 end

@@ -2,8 +2,8 @@
 
 <h5>Definition:</h5>
 <ul>
-<% @definition_array.each() do |definition| %>
-<li><%= definition.definition() %></li>
+<% @word.definitions().each() do |definition| %>
+<li><a href="/definition/<%= definition.id() %>"><%= definition.definition() %></a></li>
 <br>
 <% end %>
 </ul>
