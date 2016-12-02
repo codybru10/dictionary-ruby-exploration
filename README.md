@@ -17,7 +17,7 @@ _This app will allow a user to add word to a list and the let then add a unique 
 * __
 * _OR_
 * __
-* _Deploy this Heroku link: https://rocky-refuge-77485.herokuapp.com/_
+* _Deploy this Heroku link: https://hidden-sierra-58202.herokuapp.com/words/2_
 
 ## Known Bugs
 
