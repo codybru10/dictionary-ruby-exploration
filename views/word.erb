@@ -1,5 +1,13 @@
 <h3><%= @word.word() %></h3>
 
+<h5>Definition:</h5>
+<ul>
+<% @definition_array.each() do |definition| %>
+<li><%= definition.definition() %></li>
+<br>
+<% end %>
+</ul>
+
 
 
 <a href="/words/<%= @word.id() %>/definitions/new">Add Definition</a>

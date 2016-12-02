@@ -1,5 +1,7 @@
 <form action="/definitions" method="post">
   <div class="form_group">
+    <input type="hidden" name="word_id" id="word_id" value="<%= @word.id() %>">
+
     <label for="definition">Enter Definition</label>
     <input type="text" name="definition" id="definition" class="form-control">
     <br>
