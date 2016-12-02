@@ -1,7 +1,6 @@
 require('capybara/rspec')
 require('./app')
 Capybara.app = Sinatra::Application
-Launchy.app = Rack::Test
 set(:show_expections, false)
 
 describe('the path to add word form', {:type => :feature}) do
@@ -21,10 +20,26 @@ describe('the path to the success page after completing the add word form', {:ty
   end
 end
 
-# describe('the path to the word list/home from succes page', {:type => :feature}) do
-#   it('processes the users click and takes them to the word list/home page') do
-#     visit('/words')
-#     click_link('List')
-#     expect(page).to have_content('Personal')
-#   end
-# end
+describe('the path to definition of word', {:type => :feature}) do
+  it('processes the users click and takes them to definition') do
+    visit('/')
+    click_link('hello')
+    expect(page).to have_content('Definition:')
+  end
+end
+
+describe('the path to add definition of word', {:type => :feature}) do
+  it('processes the users click and takes them to definition form') do
+    visit('/words/1')
+    click_link('Add Definition')
+    expect(page).to have_content('Enter Definition')
+  end
+end
+
+describe('the path to success page after definition form', {:type => :feature}) do
+  it('processes the users input and takes you to succcess page') do
+    visit('/words/1/definitions/new')
+    click_button('Add Definition')
+    expect(page).to have_content('Definition has been added to the word')
+  end
+end
